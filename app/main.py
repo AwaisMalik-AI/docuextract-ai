@@ -48,7 +48,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-from app.api.routes import alerts, auth, documents, exports, rules, schedules, webhooks
+from app.api.routes import alerts, auth, crews, documents, exports, rules, schedules, webhooks
 
 app.include_router(auth.router)
 app.include_router(documents.router)
@@ -57,6 +57,7 @@ app.include_router(rules.router)
 app.include_router(exports.router)
 app.include_router(schedules.router)
 app.include_router(alerts.router)
+app.include_router(crews.router)
 
 
 @app.get("/health", tags=["System"])

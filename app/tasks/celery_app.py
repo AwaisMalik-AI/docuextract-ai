@@ -30,6 +30,7 @@ celery.conf.update(
         "docuextract.scheduled_fetch": {"queue": "documents"},
         "docuextract.check_scheduled_extractions": {"queue": "documents"},
         "docuextract.anomaly_check_task": {"queue": "documents"},
+        "docuextract.run_extraction_crew": {"queue": "documents"},
     },
     beat_schedule={
         "check_scheduled_extractions": {
@@ -45,3 +46,4 @@ celery.conf.update(
 
 # Import tasks so Celery registers them when the worker loads this module.
 from app.tasks import processing  # noqa: E402, F401
+from app.tasks import crew_tasks  # noqa: E402, F401
