@@ -2,7 +2,7 @@
 
 DocuExtract AI is a full-stack document intelligence platform: ingest from **upload, email, URL, or cloud**, run **OCR (Tesseract + OpenCV)** and **LLM extraction**, validate with a **rules engine**, route through **human approval**, store structured records, and push events to downstream systems via **webhooks**. It also provides **scheduled URL extraction** (cron), **bulk export** (CSV, Excel, JSON), **multi-channel alerting** (email, Slack), and **numeric anomaly detection** (z-score vs historical documents of the same type).
 
-**Latest:** Extraction crew (`POST /crews/extract`) — OCR QA → extractor → validator, with Celery worker `docuextract.run_extraction_crew`.
+**Latest:** Extraction crew plus **field-level document compare** (`POST /compare/fields`) for extraction drift.
 
 ---
 
